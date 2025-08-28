@@ -1,12 +1,10 @@
 // app/df-sc-sqlite/page.tsx
 
-import { PrismaClient } from '@/generated/prisma'
-
-
-// ⚠️ Don't reuse PrismaClient in production like this
-const prisma = new PrismaClient();
+import { prisma } from '@/lib/prisma';
+import type { Post } from '@/generated/prisma';
 
 export default async function Page() {
+  // const posts: Post[] = await prisma.post.findMany({ ... });
   const posts = await prisma.post.findMany({
     take: 10,
     orderBy: { id: "desc" },
@@ -19,7 +17,7 @@ export default async function Page() {
       </h2>
       <h1 className="text-xl font-bold mb-4">📄 Posts from DB</h1>
       <ul className="space-y-2">
-        {posts.map((post) => (
+        {posts.map((post: Post) => (
           <li
             key={post.id}
             className="p-3 border rounded-lg shadow-sm bg-slate-800 text-white hover:bg-yellow-300 hover:text-black transition-colors"
