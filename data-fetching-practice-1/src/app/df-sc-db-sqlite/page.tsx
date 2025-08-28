@@ -1,6 +1,6 @@
 import { prisma } from '@/lib/prisma';
-import NewPostForm from '@/app/df-sc-db-sqlite/new-form';
 import PostsList from '@/app/df-sc-db-sqlite/PostsList';
+import NewPostForm from '@/app/df-sc-db-sqlite/new-form';
 
 export default async function PostsPage() {
   const posts = await prisma.post.findMany({

@@ -15,6 +15,7 @@ export default function Navbar() {
 
       {/* Desktop Menu */}
       <div className="hidden md:flex space-x-6">
+        <Link href="/streaming-api-sqlite" className={`px-3 py-2 rounded-md font-semibold hover:bg-gray-400 transition ${pathname === "/streaming-api-sqlite" ? "bg-[#ffffff] text-[#013337] font-semibold" : ""}`}>streaming</Link>
         <Link href="/df-cc-api-call" className={`px-3 py-2 rounded-md font-semibold hover:bg-gray-400 transition ${pathname === "/df-cc-api-call" ? "bg-[#ffffff] text-[#013337] font-semibold" : ""}`}>dfCcAc</Link>
         <Link href="/df-sc-api-call" className={`px-3 py-2 rounded-md font-semibold hover:bg-gray-400 transition ${pathname === "/df-sc-api-call" ? "bg-[#ffffff] text-[#013337] font-semibold" : ""}`}>dfScAc</Link>
         <Link href="/df-sc-db-sqlite" className={`px-3 py-2 rounded-md font-semibold hover:bg-gray-400 transition ${pathname === "/df-sc-db-sqlite" ? "bg-[#ffffff] text-[#013337] font-semibold" : ""}`}>dfScSQLite</Link>

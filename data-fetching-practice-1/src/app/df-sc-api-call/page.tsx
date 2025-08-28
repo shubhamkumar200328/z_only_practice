@@ -30,14 +30,16 @@ export default async function ServerDataFetching() {
         Server-Component Fetching Data Using API Call
       </h2>
       <h1 className="text-xl font-bold mb-4">📌 Server Data Fetching</h1>
-      <ul className="space-y-2">
+      <ul className="flex flex-wrap gap-4">
         {posts.map((post) => (
           <li
             key={post.id}
-            className="p-3 border rounded-lg shadow-sm hover:bg-lime-300 bg-emerald-950 text-white hover:text-black transition-colors"
+            className="w-60 max-w-60 aspect-square p-4 border rounded-lg shadow-md bg-emerald-950 text-white hover:bg-lime-300 hover:text-black transition-colors flex flex-col justify-between"
           >
-            <h2 className="font-semibold">{post.title}</h2>
-            <p className="text-sm">{post.body}</p>
+            <div>
+              <h2 className="font-semibold text-lg mb-1 truncate">{post.title}</h2>
+              <p className="text-sm line-clamp-3">{post.body}</p>
+            </div>
           </li>
         ))}
       </ul>
